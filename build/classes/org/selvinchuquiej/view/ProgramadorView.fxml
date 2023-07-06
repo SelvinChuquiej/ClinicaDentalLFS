@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="429.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.selvinchuquiej.controller.ProgramadorController">
+   <children>
+      <ImageView fitHeight="429.0" fitWidth="669.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/FondoGeneral.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="196.0" fitWidth="196.0" layoutX="53.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Selvin.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="261.0" layoutY="62.0" prefHeight="48.0" prefWidth="174.0" text="Selvin Raúl " textFill="WHITE">
+         <font>
+            <Font name="Forte" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="14.0" prefHeight="48.0" prefWidth="294.0" text="Chuquiej Andrade" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="35.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="215.0" prefHeight="48.0" prefWidth="274.0" text="Carné : 2018354" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="252.0" layoutY="136.0" prefHeight="48.0" prefWidth="192.0" text="Información" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="286.0" prefHeight="48.0" prefWidth="385.0" text="Codigo Técnico : IN5AM" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="367.0" prefHeight="48.0" prefWidth="631.0" text="Contacto: schuquiej-2018354@kinal.edu.gt" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="33.0" />
+         </font>
+      </Label>
+      <Line endX="415.0" layoutX="155.0" layoutY="269.0" startX="-127.0" stroke="#091431" />
+      <Line endX="415.0" layoutX="160.0" layoutY="350.0" startX="-127.0" stroke="#091431" />
+      <Line endX="239.5999755859375" layoutX="204.0" layoutY="183.0" startX="49.0" stroke="#091431" />
+      <ImageView fitHeight="69.0" fitWidth="61.0" layoutX="594.0" layoutY="117.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Salir.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

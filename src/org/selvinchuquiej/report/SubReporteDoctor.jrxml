@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SubReporteDoctor" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a8aba681-a5fd-4355-a1c5-349ed89edb1d">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="numCol" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select R.codigoReceta, Date_format (R.fechaReceta, '%y/%m/%d'),DR.dosis,M.nombreMedicamento From Receta R inner join DetalleReceta  DR on DR.codigoReceta = R.codigoReceta inner join Medicamento  M on DR.codigoMedicamento = M.codigoMedicamento where R.numeroColegiado = $P{numCol}]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Date_format (R.fechaReceta, &apos;%y/%m/%d&apos;)" class="java.lang.String"/>
+	<field name="dosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombreMedicamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="42" y="1" width="100" height="20" uuid="bd32b47c-9c1c-43be-b1ba-a6212a7dd659"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Codigo Receta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="1" width="100" height="20" uuid="8f98664d-0087-4e98-b409-842986b5422f"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Receta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="1" width="100" height="20" uuid="a16cb57f-3d3e-4c19-9658-a012801c4149"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Dosis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="1" width="100" height="20" uuid="96404117-3297-432d-bedf-7dcbbcbe8dd9"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Medicamento:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="66" y="0" width="100" height="20" uuid="c63ef4b0-ec0e-478e-aafd-509845cb57f9"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="0" width="100" height="20" uuid="f1ff51bb-b559-4949-a25c-563a4ab4d6ea"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date_format (R.fechaReceta, '%y/%m/%d')}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="291" y="0" width="100" height="20" uuid="165f7a2e-9f6d-42cf-b7f7-36f783f935e3"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="0" width="100" height="20" uuid="87914003-ab6c-425f-aea2-80e0f83db546"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreMedicamento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

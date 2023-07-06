@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.selvinchuquiej.controller.DoctorController">
+   <children>
+      <ImageView fitHeight="616.0" fitWidth="1019.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@../images/FondoGeneral.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="108.0" layoutX="75.0" layoutY="83.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Doctores.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="23.0" layoutY="14.0" text="Doctores" textFill="#e0e6ec">
+         <font>
+            <Font name="Forte" size="57.0" />
+         </font>
+      </Label>
+      <VBox layoutX="34.0" layoutY="220.0" prefHeight="319.0" prefWidth="199.0">
+         <children>
+            <Button fx:id="btnNuevo" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#nuevo" prefHeight="69.0" prefWidth="189.0" stylesheets="@../resource/ClinicaDentalLFS.css" text="Nuevo">
+               <font>
+                  <Font name="Forte" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="imgNuevo" fitHeight="54.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Nuevo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEliminar" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#eliminar" prefHeight="51.0" prefWidth="167.0" stylesheets="@../resource/ClinicaDentalLFS.css" text="Eliminar">
+               <graphic>
+                  <ImageView fx:id="imgEliminar" fitHeight="50.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Eliminar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnEditar" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#editar" prefHeight="62.0" prefWidth="198.0" stylesheets="@../resource/ClinicaDentalLFS.css" text="Editar">
+               <graphic>
+                  <ImageView fx:id="imgEditar" fitHeight="48.0" fitWidth="56.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Editar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btnReporte" alignment="TOP_LEFT" mnemonicParsing="false" onAction="#reporte" prefHeight="42.0" prefWidth="167.0" stylesheets="@../resource/ClinicaDentalLFS.css" text="Reporte">
+               <graphic>
+                  <ImageView fx:id="imgReporte" fitHeight="55.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Reporte.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ImageView fitHeight="60.0" fitWidth="71.0" onMouseClicked="#menuPrincipal" pickOnBounds="true" preserveRatio="true" translateX="55.0">
+               <image>
+                  <Image url="@../images/Salir.png" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <TableView fx:id="tblDoctores" layoutX="266.0" layoutY="220.0" onMouseClicked="#seleccionarElemento" prefHeight="330.0" prefWidth="722.0" stylesheets="@../resource/ClinicaDentalLFS.css">
+        <columns>
+          <TableColumn fx:id="colNumeroColegiado" prefWidth="113.60003662109375" text="Num. Colegiado" />
+          <TableColumn fx:id="colNombresDoctor" prefWidth="155.199951171875" text="Nombres" />
+            <TableColumn fx:id="colApellidosDoctor" prefWidth="170.4000244140625" text="Apellidos" />
+            <TableColumn fx:id="colTelefonoContacto" prefWidth="121.60003662109375" text="Teléfono" />
+            <TableColumn fx:id="colCodigoEspecialidad" prefWidth="154.40008544921875" text="Especialidad" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="266.0" layoutY="14.0" prefHeight="135.0" prefWidth="705.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.5999755859375" minWidth="10.0" prefWidth="133.4" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="86.20001220703125" minWidth="9.199975585937494" prefWidth="9.199975585937494" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.200048828125" minWidth="10.0" prefWidth="162.80002441406253" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="91.20001220703125" minWidth="4.800012207031273" prefWidth="8.399951171874989" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.800048828125" minWidth="10.0" prefWidth="167.600048828125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.4000244140625" minWidth="0.0" prefWidth="4.7999267578125" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.39995117187505" minWidth="10.0" prefWidth="152.00007324218757" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="38.4" minHeight="10.0" prefHeight="38.4" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="35.39999999999999" minHeight="10.0" prefHeight="11.200000000000003" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="48.20001220703125" minHeight="10.0" prefHeight="45.80000305175781" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="174.0" text="Colegiado" textFill="#e0e6ec">
+               <font>
+                  <Font name="Forte" size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="165.0" text="Nombres" textFill="#e0e6ec" GridPane.columnIndex="2">
+               <font>
+                  <Font name="Forte" size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="170.0" text="Apellidos" textFill="#e0e6ec" GridPane.columnIndex="4">
+               <font>
+                  <Font name="Forte" size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="176.0" text="Teléfono" textFill="#e0e6ec" GridPane.columnIndex="6">
+               <font>
+                  <Font name="Forte" size="23.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="38.0" prefWidth="172.0" text="Nacimiento" textFill="#e0e6ec" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Forte" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNumeroColegiado" editable="false" prefHeight="26.0" prefWidth="161.0" styleClass="textField" stylesheets="@../resource/ClinicaDentalLFS.css" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtNombresDoctor" editable="false" prefHeight="26.0" prefWidth="122.0" styleClass="textField" stylesheets="@../resource/ClinicaDentalLFS.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtApellidosDoctor" editable="false" styleClass="textField" stylesheets="@../resource/ClinicaDentalLFS.css" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtTelefonoContacto" editable="false" styleClass="textField" stylesheets="@../resource/ClinicaDentalLFS.css" GridPane.columnIndex="6" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="cmbCodigoEspecialidad" prefHeight="26.0" prefWidth="185.0" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+            <Label alignment="CENTER" prefHeight="61.0" prefWidth="166.0" text="Especialidad" textFill="#e0e6ec" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Forte" size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

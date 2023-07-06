@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteReceta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="20" rightMargin="0" topMargin="20" bottomMargin="0" uuid="74aa4820-c117-4d5c-99ff-98a813fa1375">
+	<property name="ireport.zoom" value="1.9487171000000019"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="FondoReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ListarRecetas]]>
+	</queryString>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="-19" y="-19" width="611" height="771" uuid="87d80088-d370-4334-8626-177284dd177c"/>
+				<imageExpression><![CDATA[$P{FondoReporte}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="49" y="0" width="112" height="20" uuid="ea5e49d4-b3a3-4ab3-8c26-be7c05cadffa"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Codigó de la Receta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="0" width="112" height="20" uuid="f6c54b0f-0161-4b25-9eb5-8e4fa14edab4"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de la Receta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="0" width="123" height="20" uuid="4e19a87a-c1d9-4fc5-9f52-58e2a022a839"/>
+				<textElement>
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Numero de Colegiado:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="96" y="0" width="100" height="20" uuid="f4381063-2a6d-4189-8bb4-02e020b5ee82"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="0" width="100" height="20" uuid="89995159-c048-44dc-9952-9f51c902886f"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="394" y="0" width="100" height="20" uuid="7e0f433d-db42-4896-951a-830cc60cab57"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroColegiado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

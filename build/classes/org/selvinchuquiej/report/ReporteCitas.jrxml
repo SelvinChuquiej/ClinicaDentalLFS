@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCita" language="groovy" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="20" rightMargin="0" topMargin="20" bottomMargin="0" uuid="7028b04c-7189-4a61-84ad-35e58cbfdbfc">
+	<property name="ireport.zoom" value="2.5937424601000023"/>
+	<property name="ireport.x" value="358"/>
+	<property name="ireport.y" value="34"/>
+	<parameter name="FondoReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select C.codigoCita, Date_Format(C.fechaCita, '%Y-%m-%d'), Date_Format(C.horaCita, '%H:%m%:%s'), C.tratamiento, C.descripCondActual, C.tratamiento, P.nombresPaciente, P.apellidosPaciente, D.nombresDoctor From Cita C inner join Paciente P on C.codigoPaciente = P.codigoPaciente inner join Doctor D on C.numeroColegiado = D.numeroColegiado]]>
+	</queryString>
+	<field name="codigoCita" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Date_Format(C.fechaCita, &apos;%Y-%m-%d&apos;)" class="java.lang.String"/>
+	<field name="Date_Format(C.horaCita, &apos;%H:%m%:%s&apos;)" class="java.lang.String"/>
+	<field name="tratamiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripCondActual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosPaciente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="-21" y="-22" width="613" height="774" uuid="002f5fd1-a62a-40ff-a0e1-27e15095b650"/>
+				<imageExpression><![CDATA[$P{FondoReporte}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="26" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="13" y="0" width="100" height="20" uuid="3feb9b83-cfd0-4459-96b2-aca6ee577a97"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="78" y="1" width="100" height="20" uuid="6208973f-8066-40d2-81de-9a41c6e1aea3"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="0" width="100" height="20" uuid="690ba900-f72a-472f-b584-cd1bf62c1826"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="0" width="100" height="20" uuid="886a10fa-b4ed-481b-84f5-dbc2ac4ddfd5"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Tratamiento:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="0" width="100" height="20" uuid="549295ab-444b-4f23-aa95-7e4fff999813"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Condición Actual:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="1" width="100" height="20" uuid="6c1c1814-acf6-4adf-a2e7-14d2677ee7f9"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="479" y="0" width="100" height="20" uuid="2f83db78-bdfa-4e45-82a0-a6d5c71987e6"/>
+				<textElement>
+					<font fontName="Serif" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Doctor:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="32" y="0" width="100" height="20" uuid="76b0844a-9791-4633-8013-cbc47a2faaa1"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="205" y="0" width="100" height="20" uuid="8d9e7e03-2ac7-4695-a450-91f69e4c4fb7"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tratamiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="100" height="20" uuid="02c1cdd5-2a30-4886-9665-b70c224b0648"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripCondActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="0" width="100" height="20" uuid="965a328c-f5b3-4f67-948a-44dbffb0b131"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date_Format(C.fechaCita, '%Y-%m-%d')}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="100" height="20" uuid="b8f08f56-0cf8-4ad5-a333-9c348177a816"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Date_Format(C.horaCita, '%H:%m%:%s')}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="0" width="100" height="20" uuid="b329213c-8daa-4d60-93c5-92b8eb2c3bee"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresPaciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="0" width="100" height="20" uuid="68e66ef5-563e-485c-87bd-12d1d702918c"/>
+				<textElement>
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

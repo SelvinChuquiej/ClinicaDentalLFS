@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DetalleReceta" language="groovy" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="20" rightMargin="0" topMargin="20" bottomMargin="0" uuid="06281e7c-53bf-497a-8107-c7803d1a7ea1">
+	<property name="ireport.zoom" value="2.1435888100000016"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="94"/>
+	<parameter name="FondoReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ListarDetallesRecetas]]>
+	</queryString>
+	<field name="codigoDetalleReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dosis" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoMedicamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="-18" y="-22" width="610" height="774" uuid="1f966f26-db88-4911-9769-468ce5786cd6"/>
+				<imageExpression><![CDATA[$P{FondoReporte}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="27" y="1" width="100" height="20" uuid="b07da98e-8623-4145-82dd-0227f53590e2"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="1" width="100" height="20" uuid="947bbe52-adc0-4216-856c-2de43af91b61"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Dosis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="1" width="100" height="20" uuid="068863c0-2c93-4973-8860-c7292f9ff902"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Receta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="405" y="1" width="100" height="20" uuid="278abb33-93f9-47b8-8c5a-b99407cab08f"/>
+				<textElement>
+					<font fontName="Serif" size="10" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Medicamento:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement x="27" y="0" width="100" height="20" uuid="460db562-1311-4747-ace5-b23712583772"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoDetalleReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="0" width="100" height="20" uuid="1faa6439-dfa2-4135-b140-254bc7b140a2"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="3" width="100" height="20" uuid="684f2efa-3b13-4b06-bee6-b32f68cbe70b"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="3" width="100" height="20" uuid="a515f7df-ae48-4ec2-8cb0-22586ab44af6"/>
+				<textElement>
+					<font fontName="Serif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoMedicamento}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

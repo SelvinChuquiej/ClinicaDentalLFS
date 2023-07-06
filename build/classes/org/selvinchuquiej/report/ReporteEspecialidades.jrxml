@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteEspecialidad" language="groovy" pageWidth="612" pageHeight="792" columnWidth="592" leftMargin="20" rightMargin="0" topMargin="20" bottomMargin="0" uuid="b6254c4f-b2d1-46c0-9c1b-30bf137242f3">
+	<property name="ireport.zoom" value="2.5937424601000023"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="127"/>
+	<parameter name="FondoReporte" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[call sp_ListarEspecialidades()]]>
+	</queryString>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="-18" y="-19" width="610" height="771" uuid="8f3d8687-6e45-46ed-88f7-5357e6ccb374"/>
+				<imageExpression><![CDATA[$P{FondoReporte}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="62" y="1" width="154" height="20" uuid="6d84ef2d-12d2-4dc6-aa86-ceaefcb09ff7"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Serif" size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Codigo de la Especidalidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="1" width="122" height="20" uuid="f2b781e0-218c-4ac7-8286-2982163320e6"/>
+				<textElement>
+					<font fontName="Serif" size="13" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Especialidad:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="118" y="0" width="122" height="20" uuid="8b5252d2-b297-483a-bbe1-b2f262e8c3eb"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoEspecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="287" y="0" width="122" height="20" uuid="9d2c1681-5c27-47c8-913b-3613bf79b1d4"/>
+				<textElement>
+					<font fontName="Serif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>
